@@ -101,7 +101,7 @@ docker run -it ubuntu:curler
 # 1.9 Volumes
 
 ```sh
-docker run -v "$(pwd)"/text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service
+mkdir logs && touch logs/text.log && docker run -v $(pwd)/logs/text.log:/usr/src/app/text.log devopsdockeruh/simple-web-service:ubuntu
 ```
 
 # 1.10 Ports open
@@ -114,3 +114,52 @@ docker run -p 8080:8080 web-server
 ```
 
 ![1.10](./images/1.10.png)
+
+# 1.11 Spring
+
+[Dockerfile](./1.11/Dockerfile)
+
+```sh
+docker build . -t spring
+docker run -p 8080:8080 spring
+```
+
+# 1.12 Hello, frontend!
+
+[Dockerfile](./1.12/Dockerfile)
+
+```sh
+docker build . -t example-frontend
+docker run -p 5000:5000 example-frontend
+```
+
+# 1.13 Hello, backend!
+
+[Dockerfile](./1.13/Dockerfile)
+
+```sh
+docker build . -t example-backend
+docker run -p 8080:8080 example-backend
+```
+
+# 1.14 Environment
+
+[Dockerfile frontend](./1.14/frontend/Dockerfile) -
+[Dockerfile backend](./1.14/backend/Dockerfile)
+
+```sh
+# Frontend
+docker build . -t example-frontend
+docker run -p 5000:5000 example-frontend
+# Backend
+docker build . -t example-backend
+docker run -p 8080:8080 example-backend
+```
+
+# 1.15 Homework
+
+[Link to Docker Hub](https://hub.docker.com/r/muugmaster/covid-tracker-react)
+
+# 1.16 Heroku
+
+[Link to App](https://docker-test-niko.herokuapp.com/)
