@@ -1,0 +1,27 @@
+version: '3.5'
+
+services:
+  redis:
+    image: redis
+    container_name: cache
+    expose:
+      - 6379
+    restart: unless-stopped
+
+  backend:
+    image: example-backend
+    ports:
+      - 8080:8080
+    links:
+      - redis
+    environment:
+      - REDIS_HOST=cache
+    restart: unless-stopped
+
+  frontend:
+    image: example-frontend
+    ports:
+      - 5000:5000
+    links:
+      - backend
+    restart: unless-stopped
