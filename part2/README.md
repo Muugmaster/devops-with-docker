@@ -22,3 +22,15 @@ docker-compose up
 [Used same containers what were created in 1.14](../part1/1.14)
 
 [Docker-compose.yml](./2.4/docker-compose.yml)
+
+# 2.5
+
+```sh
+docker-compose up -d --scale compute=3
+```
+
+# 2.6
+
+[Used same containers what were created in 1.14](../part1/1.14)
+
+[Docker-compose.yml](./2.6/docker-compose.yml)
