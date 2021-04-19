@@ -7,11 +7,14 @@ services:
     restart: unless-stopped
     volumes:
       - model:/src/model
+      - images:/src/imgs
 
   kurkkumopo-backend:
     build: https://github.com/docker-hy/ml-kurkkumopo-backend.git
     container_name: kurkkumopo-backend
     restart: unless-stopped
+    ports:
+      - 5000:5000
     depends_on:
       - kurkkumopo-training
     volumes:
@@ -21,8 +24,11 @@ services:
     build: https://github.com/docker-hy/ml-kurkkumopo-frontend.git
     container_name: kurkkumopo-frontend
     restart: unless-stopped
+    ports:
+      - 3000:3000
     depends_on:
       - kurkkumopo-backend
 
 volumes:
   model:
+  images:

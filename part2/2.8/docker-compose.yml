@@ -1,0 +1,36 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres:13.2-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    container_name: postgresdb
+
+  redis:
+    image: redis
+    container_name: cache
+    expose:
+      - 6379
+    restart: unless-stopped
+
+  backend:
+    image: example-backend
+    ports:
+      - 8080:8080
+    links:
+      - redis
+      - db
+    environment:
+      - REDIS_HOST=cache
+      - POSTGRES_HOST=postgresdb
+    restart: unless-stopped
+
+  frontend:
+    image: example-frontend
+    ports:
+      - 5000:5000
+    links:
+      - backend
+    restart: unless-stopped
