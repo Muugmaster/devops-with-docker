@@ -19,6 +19,8 @@ services:
     environment:
       - POSTGRES_PASSWORD=postgres
     container_name: postgresdb
+    volumes:
+      - ./database:/var/lib/postgresql/data
 
   redis:
     image: redis
@@ -37,6 +39,7 @@ services:
     environment:
       - REDIS_HOST=cache
       - POSTGRES_HOST=postgresdb
+      - REQUEST_ORIGIN=http://localhost
     restart: unless-stopped
 
   frontend:
@@ -45,4 +48,9 @@ services:
       - 5000:5000
     links:
       - backend
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8080
     restart: unless-stopped
+
+volumes:
+  database:

@@ -38,3 +38,21 @@ docker-compose up -d --scale compute=3
 # 2.7
 
 [Docker-compose.yml](./2.7/docker-compose.yml)
+
+# 2.8
+
+[Docker-compose.yml](./2.8/docker-compose.yml)
+
+[nginx.conf](./2.8/nginx.conf)
+
+# 2.9
+
+[Docker-compose.yml](./2.9/docker-compose.yml)
+
+# 2.10
+
+[Frontend Dockerfile](./2.10/frontend/Dockerfile)
+
+[Backend Dockerfile](./2.10/backend/Dockerfile)
+
+[Docker-compose.yml](./2.10/docker-compose.yml)
