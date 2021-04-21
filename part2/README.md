@@ -56,3 +56,11 @@ docker-compose up -d --scale compute=3
 [Backend Dockerfile](./2.10/backend/Dockerfile)
 
 [Docker-compose.yml](./2.10/docker-compose.yml)
+
+# 2.11
+
+I have been using for my own projects database images from docker ie. mongodb and postgresql. Its easier to run databases in containers when developing than always installing them locally or tryin to use some free cloud provider for database.
+
+[Here](https://github.com/Muugmaster/jasenrekisteri-mern) is one older project of mine where I added in README a docker command to use so you get mongodb running and introduction how to get connectod to that mongodb running in container. 
+
+But im pretty sure after this course im gonna try to implement more docker in my develop enviroment.
