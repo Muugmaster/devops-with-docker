@@ -21,3 +21,14 @@ Tested inside both containers with ``whoami`` and got ``appuser``
 ### Image sizes:
 - Frontend: [1.17GB](./3.3/frontend/Dockerfile) -> [455MB](./3.4/frontend/Dockerfile)
 - Backend: [1.01GB](./3.3/backend/Dockerfile) -> [447MB](./3.4/backend/Dockerfile)
+
+# 3.5
+
+### Image sizes:
+- Frontend: [1.17GB](./3.3/frontend/Dockerfile) -> [343MB](./3.5/frontend/Dockerfile)
+- Backend: [1.01GB](./3.3/backend/Dockerfile) -> [447MB](./3.5/backend/Dockerfile)
+
+# 3.6 Multi-stage
+
+- Frontend: [124MB](./3.6/frontend/Dockerfile)
+- Backend: [18MB](./3.6/backend/Dockerfile)

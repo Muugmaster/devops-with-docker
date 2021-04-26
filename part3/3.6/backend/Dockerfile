@@ -1,16 +1,26 @@
 FROM golang:alpine AS builder
 
-RUN apk update && apk add --no-cache git
-WORKDIR $GOPATH/src/mypackage/myapp/
+ENV GO111MODULE=on \
+    CGO_ENABLED=0 \
+    GOOS=linux \
+    GOARCH=amd64
+
+WORKDIR /build
+
+COPY go.mod .
+COPY go.sum .
+RUN go mod download
+
 COPY . .
 
-RUN go get -d -v
+RUN go build -o main .
 
-RUN go build -o /go/bin/server
+WORKDIR /dist
+
+RUN cp /build/main .
 
 FROM scratch
 
-COPY --from=builder /go/bin/server /go/bin/server
+COPY --from=builder /dist/main /
 
-ENTRYPOINT ["/go/bin/server"]
-CMD ["go", "run", "server"]
+ENTRYPOINT ["/main"]
