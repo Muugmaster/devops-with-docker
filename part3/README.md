@@ -32,3 +32,12 @@ Tested inside both containers with ``whoami`` and got ``appuser``
 
 - Frontend: [124MB](./3.6/frontend/Dockerfile)
 - Backend: [18MB](./3.6/backend/Dockerfile)
+
+# 3.7
+
+[Project: covid-tracker-react](https://github.com/Muugmaster/covid-tracker-react)
+
+- [Start point - SIZE: 398MB](./3.7/Start/Dockerfile)
+- [End point - SIZE: 121MB](./3.7/End/Dockerfile)
+
+# 3.8 Kubernetes
