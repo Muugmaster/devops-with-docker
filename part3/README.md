@@ -8,23 +8,25 @@
 
 -
 
-# 3.3 
+# 3.3
 
 [Frontend Dockerfile](./3.3/frontend/Dockerfile)
 
 [Backend Dockerfile](./3.3/backend/Dockerfile)
 
-Tested inside both containers with ``whoami`` and got ``appuser``
+Tested inside both containers with `whoami` and got `appuser`
 
 # 3.4
 
 ### Image sizes:
+
 - Frontend: [1.17GB](./3.3/frontend/Dockerfile) -> [455MB](./3.4/frontend/Dockerfile)
 - Backend: [1.01GB](./3.3/backend/Dockerfile) -> [447MB](./3.4/backend/Dockerfile)
 
 # 3.5
 
 ### Image sizes:
+
 - Frontend: [1.17GB](./3.3/frontend/Dockerfile) -> [343MB](./3.5/frontend/Dockerfile)
 - Backend: [1.01GB](./3.3/backend/Dockerfile) -> [447MB](./3.5/backend/Dockerfile)
 
@@ -41,3 +43,5 @@ Tested inside both containers with ``whoami`` and got ``appuser``
 - [End point - SIZE: 121MB](./3.7/End/Dockerfile)
 
 # 3.8 Kubernetes
+
+![Diagram of Kubernetes](./Kubernetes.svg)
